@@ -10,9 +10,9 @@ arbitrary shape. This implementation accomodates instance weights, i.e. a core
 object is not defined as an object whose epsilon-neighborhood contains at least
 a given number of objects, but as an object whose epsilon-neighborhood weighs
 a least a given weight. The weight of a given object's epsilon-neighborhood is
-straightforwardly defined as the sum of the pairwise weights between this object
-and each of its epsilon-neighbors. This implementation does not require weights
-to be positive, so be careful what you wish for, you might just get it.
+straightforwardly defined as the sum of the weights of its epsilon-neighbors.
+This implementation does not require weights to be positive, so be careful what
+you wish for, you might just get it.
 
 To use this module, you must have numpy installed.
 
@@ -37,7 +37,7 @@ def wdbscan(dmatrix, epsilon, mu, weights=None, noise=True):
 	           classical DBSCAN).
 	
 	Keyword arguments:
-	weights -- square weight matrix (if None, weights default to 1).
+	weights -- weight array (if None, weights default to 1).
 	noise   -- Boolean indicating whether objects that do not belong to any
 	           cluster should be considered as noise (if True) or assigned to
 	           clusters of their own (if False).
